@@ -1,0 +1,1 @@
+Excercising on creating a text file, adding text to it and counthing the rows written in the file
