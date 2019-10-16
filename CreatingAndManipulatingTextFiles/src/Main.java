@@ -1,4 +1,6 @@
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class Main {
     public static void main(String[] args) {
@@ -11,16 +13,23 @@ public class Main {
         long rows = 0;
 
         try (BufferedWriter bfw = new BufferedWriter(new FileWriter(path, true));
-             BufferedReader bfr = new BufferedReader(new InputStreamReader(System.in))) {
+             BufferedReader bfr = new BufferedReader(new InputStreamReader(System.in));
+             BufferedReader fileReader = new BufferedReader(new FileReader(path))) {
             String input = "";
             while (!"stop".equalsIgnoreCase(input = bfr.readLine())) {
                 bfw.write(input);
                 bfw.newLine();
             }
+            if(fileReader.readLine() == null) {
+                bfw.close();
+                fileReader.close();
+                Files.delete(Paths.get(path));
+                System.exit(0);
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
-        try (BufferedReader bfr = new BufferedReader(new FileReader(path))){
+        try (BufferedReader bfr = new BufferedReader(new FileReader(path))) {
             rows = bfr.lines().count();
         } catch (IOException e) {
             e.printStackTrace();
@@ -28,7 +37,7 @@ public class Main {
         String newFilePath = userDir + "/res/newOutput.txt";
         File newFile = new File(newFilePath);
         try (BufferedReader reader = new BufferedReader(new FileReader(path));
-            BufferedWriter writer = new BufferedWriter(new FileWriter(newFile))){
+             BufferedWriter writer = new BufferedWriter(new FileWriter(newFile))) {
             String line = "";
             line = reader.readLine();
             if (line.contains("Rows written : ")) {
@@ -37,6 +46,7 @@ public class Main {
             }
             writer.write(String.format("Rows written : %d", rows));
             writer.newLine();
+
             while (rows-- > 0) {
                 writer.write(line);
                 writer.newLine();
