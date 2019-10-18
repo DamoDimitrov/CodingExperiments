@@ -1,63 +1,81 @@
 import java.io.*;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
-        //TODO create different classes and refactor the code
+        //TODO make it write AT ALL
+        //TODO make the deleting work AT ALL
 
         String userDir = System.getProperty("user.dir");
         String path = userDir + "/res/output.txt";
 
         long rows = 0;
 
-        try (BufferedWriter bfw = new BufferedWriter(new FileWriter(path, true));
-             BufferedReader bfr = new BufferedReader(new InputStreamReader(System.in));
-             BufferedReader fileReader = new BufferedReader(new FileReader(path))) {
+        Readers reader = new Readers();
+
+        try {
+            reader.newFilePath(path);
             String input = "";
-            while (!"stop".equalsIgnoreCase(input = bfr.readLine())) {
-                bfw.write(input);
-                bfw.newLine();
-            }
-            if(fileReader.readLine() == null) {
-                bfw.close();
-                fileReader.close();
-                Files.delete(Paths.get(path));
-                System.exit(0);
-            }
-        } catch (IOException e) {
+            writingInFile(path, reader);
+
+//           noneExistingFileChecker(path, reader);
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        try (BufferedReader bfr = new BufferedReader(new FileReader(path))) {
-            rows = bfr.lines().count();
-        } catch (IOException e) {
+        try {
+            rows = reader.fileReader(path).lines().count();
+        } catch (Exception e) {
             e.printStackTrace();
         }
         String newFilePath = userDir + "/res/newOutput.txt";
         File newFile = new File(newFilePath);
-        try (BufferedReader reader = new BufferedReader(new FileReader(path));
-             BufferedWriter writer = new BufferedWriter(new FileWriter(newFile))) {
+        try{
+            reader.newFilePath(newFilePath);
             String line = "";
-            line = reader.readLine();
+            if (reader.fileReader(path).readLine() != null) {
+                line = reader.fileReader(path).readLine();
+            }
             if (line.contains("Rows written : ")) {
                 rows--;
-                line = reader.readLine();
+                line = reader.fileReader(path).readLine();
             }
-            writer.write(String.format("Rows written : %d", rows));
-            writer.newLine();
+            reader.fileWriter(newFilePath).write(String.format("Rows written : %d", rows));
+            reader.fileWriter(newFilePath).newLine();
 
             while (rows-- > 0) {
-                writer.write(line);
-                writer.newLine();
-                line = reader.readLine();
+                reader.fileWriter(newFilePath).write(line);
+                reader.fileWriter(newFilePath).newLine();
+                line = reader.fileReader(path).readLine();
             }
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        File oldFile = new File(path);
-        oldFile.delete();
+        reader.close();
+        File file = new File(path);
+        file.delete();
         newFile.renameTo(new File(path));
+
+    }
+
+    private static void writingInFile(String path, Readers reader) throws IOException {
+        String input;
+        while (!"stop".equalsIgnoreCase(input = reader.inputReader().readLine())) {
+            reader.fileWriter(path).write(input);
+            reader.fileWriter(path).newLine();
+
+        }
+    }
+
+    private static void noneExistingFileChecker(String path, Readers reader) throws IOException {
+        if (reader.fileReader(path).readLine() == null) {
+            reader.fileWriter(path).close();
+            reader.fileReader(path).close();
+            Files.delete(Paths.get(path));
+            System.exit(0);
+        }
     }
 }
 
