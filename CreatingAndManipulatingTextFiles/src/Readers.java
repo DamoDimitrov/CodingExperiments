@@ -6,47 +6,56 @@ import java.util.Map;
 
 public class Readers implements Closeable {
 
-    private Closeable bfr;
     private BufferedReader ir;
-    private Closeable bfw;
     private Map<String, List<Closeable>> readersAndWriters;
 
     public Readers() {
-        readersAndWriters = new HashMap<>();
-        bfr = null;
-        bfw = null;
-        ir = new BufferedReader(new InputStreamReader(System.in));
+        this.readersAndWriters = new HashMap<>();
+        this.ir = new BufferedReader(new InputStreamReader(System.in));
     }
 
     public void newFilePath(String path) {
         List<Closeable> list = new ArrayList<>();
-        try {
-            list.add(new BufferedWriter(new FileWriter(path)));
-            list.add(new BufferedReader(new FileReader(path)));
+        BufferedWriter bfw = null;
+        BufferedReader bfr = null;
 
-            readersAndWriters.put(path, list);
+        try {
+            bfw = new BufferedWriter(new FileWriter(path));
+            bfr = new BufferedReader(new FileReader(path));
         } catch (IOException e) {
             e.printStackTrace();
         }
+            if(bfw != null && bfr != null) {
+                list.add(bfw);
+                list.add(bfr);
+            }
+
+            this.readersAndWriters.put(path, list);
     }
 
     public BufferedReader inputReader() {
-        return ir;
+        return this.ir;
     }
 
     public BufferedReader fileReader(String path) {
-        return (BufferedReader) readersAndWriters.get(path).get(1);
+        if (this.readersAndWriters.containsKey(path)) {
+            return (BufferedReader) this.readersAndWriters.get(path).get(1);
+        } else {
+            throw new NullPointerException("No such file");
+        }
     }
 
     public BufferedWriter fileWriter(String path) {
-        return (BufferedWriter) readersAndWriters.get(path).get(0);
+        if (this.readersAndWriters.containsKey(path)) {
+            return (BufferedWriter) this.readersAndWriters.get(path).get(0);
+        } else {
+            throw new NullPointerException("No such file");
+        }
     }
 
     @Override
     public void close() throws IOException {
-        bfr = null;
-        bfw = null;
-        ir = null;
-        readersAndWriters = null;
+        this.ir = null;
+        this.readersAndWriters = null;
     }
 }
