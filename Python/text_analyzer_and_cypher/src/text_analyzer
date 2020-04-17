@@ -1,0 +1,36 @@
+import re as re
+import pandas as pd
+from src.text_base import TextBase
+
+
+class TextAnalyzer(TextBase):
+    def __init__(self, url):
+        super().__init__(url)
+
+    def generate_report(self):
+        words = re.findall("[\w'-]+", self.text.lower())
+
+        dic = dict()
+        for word in words:
+            if word in dic:
+                dic[word] += 1
+            else:
+                dic[word] = 1
+
+        return dic
+
+    def generate_chart(self):  # TODO it should print a chart
+        sorted_words = self.__sort_dict()
+        print(pd.DataFrame(sorted_words, index=[0]))
+
+    def __sort_dict(self):
+        sorted_result = sorted(self.generate_report().items(), key=lambda x: x[1], reverse=True)[:15]
+        result = {}
+        for k, v in sorted_result:
+            result.setdefault(k, v)
+
+        return result
+
+
+a = TextAnalyzer('TheZenOfPython.txt')
+a.generate_chart()

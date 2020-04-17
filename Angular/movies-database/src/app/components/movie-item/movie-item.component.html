@@ -1,0 +1,18 @@
+<div class="card" style="width: 18rem;">
+  <img src="https://image.tmdb.org/t/p/w220_and_h330_face/{{movie.poster_path}}"
+       class="card-img-top" alt="{{movie.title}}">
+  <div class="card-body">
+    <p class="card-text">{{movie.title}}</p>
+  </div>
+  <div class="dropdown" aria-haspopup="menu" appDropdown #ref="appDropdown">
+    <button class="btn-dark dropdown-toggle">
+      Options
+    </button>
+    <div class="dropdown-menu" [ngClass]="{show: ref.isOpen}" >
+      <a class="dropdown-item">Add to list</a>
+      <a class="dropdown-item">Favourites</a>
+      <a class="dropdown-item">Watchlist</a>
+      <a class="dropdown-item">Your rating</a>
+    </div>
+  </div>
+</div>

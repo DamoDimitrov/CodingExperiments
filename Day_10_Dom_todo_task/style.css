@@ -1,0 +1,50 @@
+#mainContainer {
+    border-radius: 2px;
+    height: 200px;
+    width: 300px;
+    background-color: lightgray;
+
+}
+
+form {
+    position: relative;
+    padding-top: 10px;
+    padding-left: 50px;
+
+}
+
+#todoList {
+    list-style: none;
+    border: 2px;
+}
+
+.tasks>div {
+    border-radius: 2px;
+    background-color: rgb(238, 238, 238);
+    margin-left: 10px;
+    display: inline-block;
+    padding: 2px;
+}
+
+.tasks>button {
+    height: 22px;
+    float: right;
+    margin-right: 20px;
+    width: 50px;
+    padding: 1px;    
+}
+
+#inputText{
+    height: 24px;
+    border-radius: 2px;
+    padding-left: 10px;
+    padding-bottom: 1px;
+
+}
+
+#submitButton {
+    padding: 5px;
+    border-radius: 2px;
+    background-color: dimgray;
+    border-color: dimgrey;
+}

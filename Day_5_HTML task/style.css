@@ -1,0 +1,76 @@
+body {
+    margin: auto;
+    padding: auto;
+    background-color: #2a2c2a;
+}
+
+#mainHeader {
+    font-family: 'Times New Roman', Times, serif;
+    color: ghostwhite;
+    text-align: center;
+}
+
+#menu {
+    padding-left: 40px;
+}
+
+.navigationLinks {
+    text-align: center;
+    margin: 5px;
+    padding: 5px 25px;
+    font-size: 20px;
+    color: ghostwhite;
+    text-decoration: none;
+    background-color: #1a1a1a;
+    border-radius: 4px;
+}
+
+
+.mainSectionArticles {
+    color: ghostwhite;
+    margin: 5px;
+    background-color: #1a1a1a;
+    padding: 15px 25px;
+    border-radius: 4px;
+    font-size: 18px;
+}
+
+#articleSection {
+
+    width: 50%;
+    display: inline-block;
+}
+
+section p {
+    text-align: center;
+    color: ghostwhite;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+
+img {
+    margin-left: 30%;
+    margin-right: 30%;
+    width: 40%;
+}
+
+#asideText {
+    font-size: 17px;
+    float: left;
+    color: ghostwhite;
+    background-color: #1a1a1a;
+    border-radius: 4px;
+    width: 15%;
+    padding: 15px 5% 15px 5%;
+    margin-top: 25px;
+    margin-left: 5px;
+    margin-bottom: 25px;
+}
+
+#mainFooter {
+    text-align: center;
+}
+
+footer p {
+    color: ghostwhite;
+}
