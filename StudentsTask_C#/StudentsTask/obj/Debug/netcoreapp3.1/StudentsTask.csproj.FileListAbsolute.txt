@@ -1,0 +1,13 @@
+C:\Users\damya\Desktop\C#.Net Core\StudentsTask\StudentsTask\bin\Debug\netcoreapp3.1\StudentsTask.exe
+C:\Users\damya\Desktop\C#.Net Core\StudentsTask\StudentsTask\bin\Debug\netcoreapp3.1\StudentsTask.deps.json
+C:\Users\damya\Desktop\C#.Net Core\StudentsTask\StudentsTask\bin\Debug\netcoreapp3.1\StudentsTask.runtimeconfig.json
+C:\Users\damya\Desktop\C#.Net Core\StudentsTask\StudentsTask\bin\Debug\netcoreapp3.1\StudentsTask.runtimeconfig.dev.json
+C:\Users\damya\Desktop\C#.Net Core\StudentsTask\StudentsTask\bin\Debug\netcoreapp3.1\StudentsTask.dll
+C:\Users\damya\Desktop\C#.Net Core\StudentsTask\StudentsTask\bin\Debug\netcoreapp3.1\StudentsTask.pdb
+C:\Users\damya\Desktop\C#.Net Core\StudentsTask\StudentsTask\obj\Debug\netcoreapp3.1\StudentsTask.csprojAssemblyReference.cache
+C:\Users\damya\Desktop\C#.Net Core\StudentsTask\StudentsTask\obj\Debug\netcoreapp3.1\StudentsTask.AssemblyInfoInputs.cache
+C:\Users\damya\Desktop\C#.Net Core\StudentsTask\StudentsTask\obj\Debug\netcoreapp3.1\StudentsTask.AssemblyInfo.cs
+C:\Users\damya\Desktop\C#.Net Core\StudentsTask\StudentsTask\obj\Debug\netcoreapp3.1\StudentsTask.csproj.CoreCompileInputs.cache
+C:\Users\damya\Desktop\C#.Net Core\StudentsTask\StudentsTask\obj\Debug\netcoreapp3.1\StudentsTask.dll
+C:\Users\damya\Desktop\C#.Net Core\StudentsTask\StudentsTask\obj\Debug\netcoreapp3.1\StudentsTask.pdb
+C:\Users\damya\Desktop\C#.Net Core\StudentsTask\StudentsTask\obj\Debug\netcoreapp3.1\StudentsTask.genruntimeconfig.cache
