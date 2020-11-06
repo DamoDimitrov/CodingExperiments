@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Text;
 
 namespace StudentsTask
 {
@@ -7,28 +8,17 @@ namespace StudentsTask
     {
         static void Main(string[] args)
         {
-            const string StudentFName = "Ivan";
-            const string StudentLName = "Ivanov";
-            var specialty = new Specialty(1, "Computer Science");
+            string alp = "0ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            int n = 132;
+            StringBuilder result = new StringBuilder();
 
-
-            /* Adding more than 3 students so my filtering and ordering would make logic*/
-            for(int i = 0; i < 20; i++)
+            while (n >= 1)
             {
-                Student student = new Student(StudentFName + i.ToString(), StudentLName + i.ToString(), i);
-                specialty.Students.Add(student);
-            }
+                result.Insert(0, alp[n % 26]);
+                n /= 26;
+            } 
 
-            var descSt = from student in specialty.Students
-                         where student.FirstName.Contains("2")
-                         orderby student.FirstName descending
-                         select student;
-
-            foreach(var st in descSt)
-            {
-                Console.WriteLine(st.FirstName);
-            }
-            
+            Console.Write(result.ToString());
         }
     }
 }

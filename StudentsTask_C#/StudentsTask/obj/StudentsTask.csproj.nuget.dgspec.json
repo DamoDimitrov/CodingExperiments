@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\damya\\Desktop\\C#.Net Core\\StudentsTask\\StudentsTask\\StudentsTask.csproj": {}
+    "C:\\Users\\damya\\Desktop\\CodingExperiments\\StudentsTask_C#\\StudentsTask\\StudentsTask.csproj": {}
   },
   "projects": {
-    "C:\\Users\\damya\\Desktop\\C#.Net Core\\StudentsTask\\StudentsTask\\StudentsTask.csproj": {
+    "C:\\Users\\damya\\Desktop\\CodingExperiments\\StudentsTask_C#\\StudentsTask\\StudentsTask.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\damya\\Desktop\\C#.Net Core\\StudentsTask\\StudentsTask\\StudentsTask.csproj",
+        "projectUniqueName": "C:\\Users\\damya\\Desktop\\CodingExperiments\\StudentsTask_C#\\StudentsTask\\StudentsTask.csproj",
         "projectName": "StudentsTask",
-        "projectPath": "C:\\Users\\damya\\Desktop\\C#.Net Core\\StudentsTask\\StudentsTask\\StudentsTask.csproj",
+        "projectPath": "C:\\Users\\damya\\Desktop\\CodingExperiments\\StudentsTask_C#\\StudentsTask\\StudentsTask.csproj",
         "packagesPath": "C:\\Users\\damya\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\damya\\Desktop\\C#.Net Core\\StudentsTask\\StudentsTask\\obj\\",
+        "outputPath": "C:\\Users\\damya\\Desktop\\CodingExperiments\\StudentsTask_C#\\StudentsTask\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\damya\\AppData\\Roaming\\NuGet\\NuGet.Config",

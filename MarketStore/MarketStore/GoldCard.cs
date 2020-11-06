@@ -15,7 +15,7 @@ namespace MarketStore
         {
         }
 
-        private double CalculateDiscountRate()
+        protected override double CalculateDiscountRate()
         {
             double dr = DISCOUNT_RATE_1;
             double additionalDiscount = this.Turnover / 10000;
@@ -24,19 +24,6 @@ namespace MarketStore
                 additionalDiscount = 0.08;
             }
             return dr + additionalDiscount;
-        }
-        private double CalculateDiscount()
-        {
-            return this.PurchaseValue * CalculateDiscountRate();
-        }
-
-        public string GetCardInformation()
-        {
-            double finalPrice = this.PurchaseValue - CalculateDiscount();
-            return $"Purchase value: ${this.PurchaseValue:F} \n" +
-                $"Discount rate: {CalculateDiscountRate() * 100:F1}% \n" +
-                $"Discount: ${CalculateDiscount():F} \n" +
-                $"Total: ${finalPrice:F}";
         }
     }
 }

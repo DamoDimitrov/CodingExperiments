@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CqEg4LhJDSya1hyZjmtTHsml+B7UxW5886t+bj0UI97AuWqj3dY4e2ViGvlXOie/ifKKkz6QKDbU/f1elf3sEQ==",
+  "dgSpecHash": "WK2cEN90g7hMWeq/m0vQPeSn/HqIGrADy7PD47YTMmd4lZT+1fa0AufW/7uQxxIzXq//kmdOQruKlkrFHCWL6w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\damya\\Desktop\\C#.Net Core\\StudentsTask\\StudentsTask\\StudentsTask.csproj",
+  "projectFilePath": "C:\\Users\\damya\\Desktop\\CodingExperiments\\StudentsTask_C#\\StudentsTask\\StudentsTask.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
